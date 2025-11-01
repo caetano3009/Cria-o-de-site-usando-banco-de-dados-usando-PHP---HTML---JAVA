@@ -1,0 +1,426 @@
+/* ======== RESET ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======== GERAL ======== */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f5f6f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ======== CABEÇALHO (Layout com botões laterais) ======== */
+header {
+    /* Cores do gradiente: #1400c6 (azul) e #657a00 (verde-oliva) */
+    background: linear-gradient(90deg, #1400c6, #657a00);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    display: flex; 
+    flex-direction: column;
+}
+
+/* Container que alinha Título (esquerda) e Botões de Perfil (direita) */
+.header-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Container para o Título (H1) */
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+/* Estilo para o link A dentro do H1 (TÍTULO CLICÁVEL) */
+header h1 a {
+    color: inherit; /* Garante que a cor do link seja branca (herdada do header) */
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    display: flex; 
+    align-items: center;
+    gap: 10px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efeito Hover do Título Clicável */
+header h1 a:hover {
+    color: #beef00; /* Cor amarela/verde ao passar o mouse */
+    transform: scale(1.05);
+    text-shadow: 0 0 8px #beef00;
+}
+
+
+/* ======== BOTÕES SUPERIORES (Direita) ======== */
+.perfil-usuario-area {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* Estilo BÁSICO para todos os botões do cabeçalho */
+.btn-cadastro-usuario,
+.btn-login-usuario,
+.btn-admin,
+.btn-inicio-cabecalho {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre o ícone e o texto */
+    border: 1px solid transparent;
+}
+
+/* Cores específicas dos Botões Superiores */
+.btn-cadastro-usuario { background-color: #28a745; border-color: #28a745; } /* Verde */
+.btn-login-usuario { background-color: #007bff; border-color: #007bff; } /* Azul */
+.btn-admin { background-color: #dc3545; border-color: #dc3545; } /* Vermelho */
+.btn-inicio-cabecalho { background-color: #657a00; border-color: #657a00; } /* Verde-Oliva */
+
+.perfil-usuario-area a:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* ======== MENU (NAV) Principal ======== */
+nav {
+    background: #1400c6;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 6px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    transform-origin: center;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    color: #beef00;
+    background: none;
+    text-shadow: 0 0 10px #beef00;
+}
+
+
+/* ======== CONTEÚDO PRINCIPAL (Main - Padrão Vagas) ======== */
+main {
+    max-width: 1000px;
+    background: #fff;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #1400c6;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+/* ======== FORMULÁRIOS CENTRALIZADOS (Login, Cadastro - VERTICAL) ======== 
+   Estes estilos são usados em login.php e cadastro_usuario.php
+*/
+.form-container-centralizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    max-width: none;
+    margin: 0;
+    background: #f5f6f7;
+    box-shadow: none;
+    min-height: 80vh;
+}
+
+.form-box-white {
+    background: #ffffff;
+    color: #333;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 450px; 
+    text-align: center;
+}
+
+.form-box-white h2 {
+    color: #1400c6;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.formulario-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.formulario-vertical label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.formulario-vertical input[type="text"],
+.formulario-vertical input[type="email"],
+.formulario-vertical input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.formulario-vertical button[type="submit"] {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; 
+}
+
+.formulario-vertical button[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+
+.link-esqueci {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    color: #1400c6;
+    text-decoration: none;
+    margin-top: -10px; 
+    margin-bottom: 10px;
+}
+
+.link-esqueci:hover {
+    text-decoration: underline;
+}
+
+.links-rodape {
+    margin-top: 25px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.links-rodape p {
+    margin: 5px 0;
+}
+
+.links-rodape a {
+    color: #1400c6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.links-rodape a:hover {
+    text-decoration: underline;
+}
+
+
+/* ======== ESTILOS FORMULÁRIO DE VAGA (cadastrar.php) ======== */
+.formulario-vaga {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.formulario-vaga label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: -5px;
+}
+
+.formulario-vaga input[type="text"],
+.formulario-vaga textarea,
+.formulario-vaga select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.formulario-vaga button[type="submit"] {
+    background-color: #657a00;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.formulario-vaga button[type="submit"]:hover {
+    background-color: #4b5b00;
+}
+
+
+/* ======== ESTILOS DA PÁGINA INICIAL (index.php) ======== */
+.form-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.form-filtros input,
+.form-filtros select {
+    padding: 8px;
+    border: 2px solid #657a00;
+    border-radius: 6px;
+    width: 200px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.form-filtros button[type="submit"], .btn-limpar {
+    background-color: #1400c6;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+}
+
+.form-filtros button[type="submit"]:hover, .btn-limpar:hover {
+    background-color: #0d0080;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #e0e0e0;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.lista-vagas {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.lista-vagas li {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-left: 5px solid #1400c6;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.lista-vagas li h3 {
+    color: #657a00;
+    margin-bottom: 10px;
+}
+
+.btn-excluir {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-excluir:hover {
+    background-color: #c82333;
+}
+/* ... [Mantenha todo o seu CSS existente] ... */
+
+/* ======== NOVOS ESTILOS PARA VAGAS ======== */
+
+/* Botão de Candidatura */
+.btn-candidatar {
+    background-color: #ffc107; /* Amarelo/Laranja - Alerta */
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none; /* Se for um link */
+}
+
+.btn-candidatar:hover {
+    background-color: #e0a800;
+}
+
+/* Botão de Vaga Cadastrada (Status) */
+.btn-candidatar.cadastrado {
+    background-color: #28a745; /* Verde - Sucesso */
+    color: white;
+    cursor: default;
+}
+
+.btn-candidatar.cadastrado:hover {
+    background-color: #28a745;
+}
